@@ -1,3 +1,9 @@
+categories.txt
+plan.txt
+checkpoint.txt
+
+scripts/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
