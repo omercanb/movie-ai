@@ -1,0 +1,34 @@
+Steps:
+    1. Getting to a movie's script page.
+    2. Getting the html tag which contains the script.
+    3. Saving the html to a file
+    4. Filterin out empty html
+
+1. Getting to a movie's script page.
+After writing some movie titles for which the rule of replacing spaces with dashes did not work to get the script url,
+I noticed the pattern that colons should also be deleted.
+    For example: 1492: Conquest of Paradise -> https://imsdb.com/scripts/1492-Conquest-of-Paradise.html
+Interestingly, any movie with an ampersand in the name turned out to actually not have a script.
+
+After the running of the program to download scripts:
+It turned out that the aformentioned rules of finding the script file from the movie title worked for all movies.
+The movies that ended up on empty_script_movies.txt actually did not have scripts and all had ampersands in the title.
+
+An error was that the movie 8 Mile has an empty script page except for a the title 8 Mile.
+There may be multiple occurances of this error. I will be filtering them out.
+
+Another error was that movies like Outbreak, whose supposed script page is https://imsdb.com/scripts/Outbreak.html,
+actually was not empty and just did not exists, giving an http 404 error. 
+This resulted in 'None', being saved as the html. I will also be filtering these out.
+
+2. and 3.
+Went according to plan.
+
+4. Because of new empty html options which I have previously missed, I will now need to filter them out.
+For this purpose, I will repetiviely find the file with the least lines. 
+If it is an empty script, I will delete all files of that size.
+If it is not the filtering should be complete.
+
+After step 4:
+The two errors that were pointed out in step 1 turned out to be the only types of empty scripts.
+They were sucesfully filtered out using the strategy of finding the shortest files.

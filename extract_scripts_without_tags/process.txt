@@ -1,0 +1,6 @@
+Steps:
+    1. Remove text that isn't part of the script.
+    2. Get the remaining text, removing all tags.
+    3. Remove empty lines
+
+All steps according to plan.

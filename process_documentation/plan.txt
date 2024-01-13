@@ -1,0 +1,20 @@
+This document contains the plans for the project without going into their specific implementation details.
+The details can be found in the plan.txt file of the directories.
+
+Steps:
+    1. Acquire all movie script html
+    2. Train a model that can differentiate between dialogue and stage directions
+    2. Use structure present in most scripts to create a model that can identify dialogue from stage driections
+
+
+1. Acquire all movie script html
+    Use The Internet Movie Script Database (https://imsdb.com/). Go through all the movies there and get their scripts.
+    Save the html tag that contains the script directly without doing any extraction.
+        (There is a specific css class consistently used to contain the script: scr-text)
+        (Extraction is not done as errors in extraction would require the process to be restarted, increasing traffic)
+
+2. Train a model that can differentiate between dialogue and stage directions
+    Most scripts have some structure where dialogue and stage directions have different levels of indentation.
+    To get the most data to train a model later, I would like to utilize the scripts without structure as well.
+    For this purpose I will train a model that will identify if a line is stage directions or dialogue from the text.
+    

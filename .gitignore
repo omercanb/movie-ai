@@ -1,8 +1,6 @@
-categories.txt
-plan.txt
 checkpoint.txt
 
-scripts/
+script_files/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

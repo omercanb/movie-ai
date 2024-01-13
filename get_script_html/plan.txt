@@ -1,0 +1,50 @@
+Steps:
+    1. Getting to a movie's script page.
+    2. Getting the html tag which contains the script.
+    3. Saving the html to a file
+
+1. Getting to a movie's script page:
+
+https://imsdb.com/all-scripts.html contains links to all movies' pages. 
+    Movie Page Example: https://imsdb.com/Movie Scripts/10 Things I Hate About You Script.html
+The movie's page then contains a link to it's script.
+    Script Page Example: https://imsdb.com/scripts/10-Things-I-Hate-About-You.html
+
+Going directly from the "all scripts" page to the movies script page will be faster than first navigating to the
+movie page and then to the script page as it will need one less get request.
+
+The title of the movie on the "all scripts" page looks like it might always match its script page's url.
+    For example:
+        10 Things I Hate About You Script -> https://imsdb.com/scripts/10-Things-I-Hate-About-You.html
+    Also in the case of titles with 'The':
+        Abyss, The -> https://imsdb.com/scripts/Abyss,-The.html
+Replacing the spaces with a dash and visiting that page from the url "https://imsdb.com/scripts/" should lead to the 
+correct page.
+If it does not I will raise an error to see. 
+I will make a decision based on for how many scripts this rule doesn't hold. 
+
+To see if it does not lead to the correct page, firstly, 
+all urls in the form https://imsdb.com/scripts/<anything>.html are valid and have the same html of an empty script page.
+So I will compare the html with existing html of an empty script page to see if it is empty.
+
+If an exception occurs, the last url will be saved to a file. I suspect exceptions will be common because of requests.
+
+
+2. Getting the html tag which contains the script:
+
+    All pages that I have checked include the script under a tag of class scrtext.
+    However this tag generally contains additional html outside of the script.
+
+    The script itself is contained in a pre tag under this tag.
+    But it is not guaranteed that there will be one pre tag.
+
+    Because I want to make the minimum amount of http requests required I will just save all the html contained under
+    the scrtext class and do the processing to extract the script later on my local files.
+    This way, if I make a mistake in the extraction of the script, I will not have to do get requests again.
+
+
+3. Saving the html to a file:
+    Writing the title and url for later use.
+    Writing the correct html tag and children as a string to files of movie names.
+    
+
