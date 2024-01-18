@@ -1,0 +1,16 @@
+Steps:
+    1. Choose a method of identifying wether a text is correctly indented and can be used to create the dataset
+    2. Split the lines as such
+
+
+The cutoff for movies with just one indent level was a max frequency of 0.92, A film titles burning annie was the cutoff,
+the films with higher max frequency had only one indentation level.
+
+To determine if a movie is formatted in such a way that the most two frequent indetation levels are the dialogue and the
+screen directions, I intially thought of doing a similar cutoff frequency for the sum of the two max frequencies. At 0.85
+frequency there started to be issues where there were not exactly two indentation levels but were still identified by 
+them always being more indented than the screen directions. Here I got the tought of finding an average indentation level
+and indents above it would be dialoge and below would be screen directions. 
+This may lower the quality of data. But when the cutoff is 0.9, 258 movies are lost. Additionally the lines which are
+not indented at any of the max two levels are also lost. Therefore I think it will be worth to use an average indent.
+I also chose a cutoff of 0.3. This only eliminated 3 movies, all of which seemed to be formatted quite absrudly.

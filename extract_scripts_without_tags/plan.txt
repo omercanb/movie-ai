@@ -1,7 +1,7 @@
 Steps:
     1. Remove text that isn't part of the script.
     2. Get the remaining text, removing all tags.
-    3. Remove parantheses and empty lines
+    3. Remove empty lines and parantheses
 
 
 1. Remove text that isn't part of the script.
@@ -11,6 +11,8 @@ Steps:
 2. Get the remaining text, removing all tags.
     The html partsing library has a method for this.
 
-3. Remove parantheses and empty lines
-Lines of parantheses tend to have weird indenting and are not useful for analysis of stage direction vs dialogue
-Empty lines also have no use
+3. Remove empty lines
+Empty lines have no use
+The only type of parantheses I want to remove are lines that are only parantheses as these have irreguar indenting and
+do not provide information towards categorizing a line.
+Any parantheses that are part of a line can be helpful in identifying the category of that line.

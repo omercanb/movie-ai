@@ -8,8 +8,8 @@ ALL_SCRIPTS_URL = 'https://imsdb.com/all-scripts.html'
 BASE_SCRIPT_URL = 'https://imsdb.com/scripts/'
 
 SCRIPT_PATH = 'script_files/raw_script_html'
-CHECKPOINT_PATH = 'script_html/checkpoint.txt'
-EMPTY_SCRIPT_MOVIES = 'script_html/empty_script_movies.txt'
+CHECKPOINT_PATH = 'get_script_html/checkpoint.txt'
+EMPTY_SCRIPT_MOVIES = 'get_script_html/empty_script_movies.txt'
 
 EMPTY_SCRIPT_HTML = requests.get(BASE_SCRIPT_URL + 'invalid-title.html').content
 

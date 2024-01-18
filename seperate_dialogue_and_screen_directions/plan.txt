@@ -1,0 +1,10 @@
+Steps:
+    1. Choose a method of identifying wether a text is correctly indented and can be used to create the dataset
+    2. Split the lines as such
+
+1. Choose a method of identifying wether a text is correctly indented and can be used to create the dataset
+    Firstly I want to make sure that all lines are not at the same level.
+    So I will get the most frequent line indentation and make sure that its frequency is below a threshold.
+    Then I will get the next most frequent line indentation and make sure the sum of these two frequencies are above 
+    another threshold.
+    If this holds, then the text will be correctly indented. I will also have the lines that are correctly indented ready.
