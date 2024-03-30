@@ -1,12 +1,8 @@
-def word_tokenize(text):
-    filters = '!"#$%&()*+,-./:;<=>?@[\\]^_`{|}~\t\n'
-    split = ' '
-    translate_dict = {c: split for c in filters}
-    translate_map = str.maketrans(translate_dict)
-    text = text.translate(translate_map)
-    sequence = text.split(split)
-    return [i for i in sequence if i]
+import torch
 
+guesses = torch.tensor([0,0,1,1])
+y = torch.tensor([0,1,0,1])
 
-s = 'This is a sample, don\'t sentence.'
-print(word_tokenize(s))
+print(guesses != y)
+print(y == 1)
+print((guesses != y).logical_and((y == 1)))

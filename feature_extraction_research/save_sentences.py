@@ -1,3 +1,0 @@
-import load_dataset
-
-load_dataset.get_all_dialogue_and_stage_directions()
